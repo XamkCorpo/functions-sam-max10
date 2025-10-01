@@ -4,10 +4,36 @@
     {
         static void Main(string[] args)
         {
-            Chooseoperation();
-            GetNumber();
-            Getnumber2();
+            int operation = Chooseoperation();
+            decimal num1 = GetNumber();
+            decimal num2 = Getnumber2();
+            decimal result = 0;
+
+            switch (operation)
+            {
+                case 1:
+                    result = plus(num1, num2);
+                    break;
+                case 2:
+                    result = minus(num1, num2);
+                    break;
+                case 3:
+                    result = multiplication(num1, num2);
+                    break;
+                case 4:
+                    if (num2 == 0)
+                        Console.WriteLine(" number cannot divide by zero");
+                    else
+                    {
+                        result = division(num1, num2);
+                    }
+
+                    break;
+
+            }
+            Tulos(result);
         }
+
         /// <summary>
         /// Lets user chooce an operation
         /// </summary>
@@ -37,8 +63,8 @@
         /// <summary>
         /// User enters the first number
         /// </summary>
-        /// <returns> Returns a valid decimal number</returns>  
-        static Decimal GetNumber()
+        /// <returns> Returns a valid  number</returns>  
+        static decimal GetNumber()
         {
             Console.WriteLine("enter first number");
             while (true)
@@ -61,8 +87,8 @@
         /// <summary>
         /// User enters he second number
         /// </summary>
-        /// <returns> Returns a valid decimal number</returns>
-        static Decimal Getnumber2()
+        /// <returns> Returns a valid number</returns>
+        static decimal Getnumber2()
         {
             Console.WriteLine("enter second number");
             while (true)
@@ -88,6 +114,65 @@
 
         }
 
+        /// <summary>
+        /// program makes + calculation
+        /// </summary>
+        /// <param name="num1"></param>
+        /// <param name="num2"></param>
+        /// <returns></returns>
+        static decimal plus(decimal num1, decimal num2)
+        {
+            return num1 + num2;
+
+
+
+
+
+
+
+        }
+
+        /// <summary>
+        /// program makes minus calculation
+        /// </summary>
+        /// <param name="num1"></param>
+        /// <param name="num2"></param>
+        /// <returns></returns>
+        static decimal minus(decimal num1, decimal num2)
+        {
+            return num1 - num2;
+
+        }
+
+        /// <summary>
+        /// program makes multiplication
+        /// </summary>
+        /// <param name="num1"></param>
+        /// <param name="num2"></param>
+        /// <returns></returns>
+        static decimal multiplication(decimal num1, decimal num2)
+        {
+            return num1 * num2;
+
+        }
+        /// <summary>
+        /// program makes division
+        /// </summary>
+        /// <param name="num1"></param>
+        /// <param name="num2"></param>
+        /// <returns></returns>
+        static decimal division(decimal num1, decimal num2)
+        {
+
+
+            return num1 * num2;
+        }
+
+
+        static void Tulos(decimal result)
+        {
+            Console.WriteLine($"tulos on: {result}");
+        }
 
 
 
@@ -100,4 +185,11 @@
 
 
 
+
+
+
+
+
+
+    }
 }
